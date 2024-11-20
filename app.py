@@ -37,15 +37,15 @@ with col6:
 .subheader('모델 활용')
 st.write('**** 나이,심박수,CK-MB,트로포닌을 입력해주세요... 인공지능이 당신의 심장마비 여부를 알려드립니다!')
 
-a = st.number_input(' _________ ', value=0)
-b = st.number_input(' _________ ', value=0)
-c = st.number_input(' _________ ', value=0)
-d = st.number_input(' _________ ', value=0)
+a = st.number_input(' 나이를 입력하세요. ', value=0)
+b = st.number_input(' 심박수를 입력하세요. ', value=0)
+c = st.number_input(' CK-MB 수치를 입력하세요. ', value=0)
+d = st.number_input(' 트로포닌 수치를 입력하세요', value=0)
 
 if st.button('여부 확인'):              # 사용자가 '합불분류' 버튼을 누르면
         input_data = [[ a,b,c,d ]]          # 사용자가 입력한 a,b,c 를 input_data에 저장하고
-        p = model._______(input_data)      # model이 분류한 값을 p에 저장한다
+        p = model.[(a,b,c,d)](input_data)      # model이 분류한 값을 p에 저장한다
         if p[0] == 1 :
-              st.success('인공지능 분류 결과는 ___입니다')
+              st.success('인공지능 분류 결과는 "심장마비 가능성이 있다"입니다')
         else:
-              st.success('인공지능 분류 결과를 ____입니다')
+              st.success('인공지능 분류 결과는 "심장마비 가능성이 없다"입니다')
