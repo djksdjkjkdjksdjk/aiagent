@@ -7,7 +7,7 @@ import joblib
 model = joblib.load('/content/Medicaldataset 최종ㄱㅗㅗㅗ.xlsx') 
 # 2. 모델 설명
 .title('심장마비 여부 분류 모델')
-col1, col2,col3 = st.columns(  )      # 몇 개의 컬럼으로 나눌까?
+col1, col2,col3 = st.columns(  )   
 with col1:
       st.subheader('모델 설명 ')
       st.write(' - 기계학습 알고리즘 : 로지스틱 회귀 ')
@@ -19,7 +19,7 @@ with col1:
 # 3. 데이터시각화
 with col2:
       st.subheader('데이터시각화1')
-      st.image('/content/시각화1.png' )   # 이미지 불러오기
+      st.image('/content/시각화1.png' )   
 with col3:
       st.subheader('데이터시각화2')
       st.image('/content/시각화2.png')  
@@ -42,9 +42,9 @@ b = st.number_input(' 심박수를 입력하세요. ', value=0)
 c = st.number_input(' CK-MB 수치를 입력하세요. ', value=0)
 d = st.number_input(' 트로포닌 수치를 입력하세요', value=0)
 
-if st.button('여부 확인'):              # 사용자가 '합불분류' 버튼을 누르면
-        input_data = [[ a,b,c,d ]]          # 사용자가 입력한 a,b,c 를 input_data에 저장하고
-        p = model.[(a,b,c,d)](input_data)      # model이 분류한 값을 p에 저장한다
+if st.button('여부 확인'):              
+        input_data = [[ a,b,c,d ]]         
+        p = model.[(a,b,c,d)](input_data)   
         if p[0] == 1 :
               st.success('인공지능 분류 결과는 "심장마비 가능성이 있다"입니다')
         else:
