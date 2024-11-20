@@ -44,7 +44,7 @@ d = st.number_input(' 트로포닌 수치를 입력하세요', value=0)
 
 if st.button('여부 확인'):              
         input_data = [[ a,b,c,d ]]         
-        p = model.[(a,b,c,d)](input_data)   
+        p = model.predict(input_data)   
         if p[0] == 1 :
               st.success('인공지능 분류 결과는 "심장마비 가능성이 있다"입니다')
         else:
