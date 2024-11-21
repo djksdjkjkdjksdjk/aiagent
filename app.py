@@ -4,10 +4,10 @@ import streamlit as st
 
 # 1. 기계학습 모델 파일 로드
 import joblib
-model = joblib.load('/content/Medicaldataset_______.xlsx') 
+model = joblib.load('logistic_regression_model (1).pkl') 
 # 2. 모델 설명
 title('심장마비 여부 분류 모델')
-col1, col2,col3 = st.columns(  )   
+col1, col2, col3, col4, col5, col6 = st.columns(6)   
 with col1:
       st.subheader('모델 설명 ')
       st.write(' - 기계학습 알고리즘 : 로지스틱 회귀 ')
